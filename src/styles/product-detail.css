@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.product-detail {
+    font-family: 'Quicksand', sans-serif;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.product-detail>.route {
+    padding: 2rem;
+    padding-right: 0;
+}
+
+.product-detail>.route>span {
+    font-weight: 700;
+}
+
+.product-detail>.route>span:first-child:hover {
+    cursor: pointer;
+}
+
+.product-detail>.route>i {
+    font-size: 12px;
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.images-carousel {
+    position: relative;
+    height: 50vh;
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images-carousel>div>img {
+    max-width: 270px;
+    max-height: 270px;
+    object-fit: contain;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+    border-radius: 10px;
+}
+
+.images-carousel .left {
+    position: absolute;
+    top: 45%;
+    left: 2px;
+    font-size: 3rem;
+    color: black;
+    z-index: 900;
+    cursor: pointer;
+    user-select: none;
+}
+
+.images-carousel .right {
+    position: absolute;
+    top: 45%;
+    right: 2px;
+    font-size: 3rem;
+    color: black;
+    z-index: 900;
+    cursor: pointer;
+    user-select: none;
+}
+
+.slide {
+    opacity: 0;
+    transition-duration: 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+}
+
+.details {
+    width: 100%;
+    max-width: 700px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.quantity {
+    display: flex;
+    width: 100px;
+    height: 30px;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.quantity>button {
+    width: 30px;
+    height: 100%;
+    border: 0px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.quantity>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 100%;
+}
+
+.details>button {
+    align-self: center;
+    text-align: end;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.details>button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+   
+.details>button.learn-more {
+width: 300px;
+height: auto;
+}
+
+.details>button.learn-more .circle {
+transition: all 0.25s cubic-bezier(0.65, 0, 0.076, 1);
+position: relative;
+display: block;
+margin: 0;
+width: 3rem;
+height: 3rem;
+background: black;
+border-radius: 1.625rem;
+}
+
+.details>button.learn-more .circle .icon {
+transition: all 0.25s cubic-bezier(0.65, 0, 0.076, 1);
+position: absolute;
+top: 0;
+bottom: 0;
+margin: auto;
+background: #fff;
+}
+
+.details>button.learn-more .circle .icon.arrow {
+transition: all 0.25s cubic-bezier(0.65, 0, 0.076, 1);
+left: 0.950rem;
+bottom: 0.950rem;
+width: 1.125rem;
+height: 0.125rem;
+background: none;
+}
+
+.details>button.learn-more .circle .icon.arrow::before {
+position: absolute;
+content: "";
+top: -0.29rem;
+right: 0.0625rem;
+width: 0.625rem;
+height: 0.625rem;
+transform: rotate(45deg);
+}
+
+.details>button.learn-more .button-text {
+transition: all 0.25s cubic-bezier(0.65, 0, 0.076, 1);
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+padding: 0.75rem 0;
+margin: 0 0 0 3rem;
+color: black;
+font-weight: 700;
+line-height: 1.6;
+text-align: center;
+text-transform: uppercase;
+}
+
+.details>button:hover .circle {
+width: 100%;
+}
+
+.details>button:hover .circle .icon.arrow {
+transform: translate(1rem, 0);
+}
+
+.details>button:hover .button-text {
+color: #fff;
+}
+
+@media only screen and ( min-width: 1100px ) {
+    .info-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .details {
+        padding-left: 5rem;
+        align-items: flex-start;
+    }
+
+    .details>p {
+        text-align: start;
+    }
+
+    .details>button {
+        align-self: flex-start;
+    }
+}

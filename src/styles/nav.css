@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+#nav-bar {
+    font-family: 'Quicksand', sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    padding: .5rem 0;
+}
+
+#nav-bar>.logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+#nav-bar>.logo>img {
+    width: 30px;
+    cursor: pointer;
+}
+
+#nav-bar>.links-desktop {
+    display: none;
+}
+
+#nav-bar>.links-desktop span {
+    margin-left: 5px;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#nav-bar>.more-menu>i {
+    font-size: 24px;
+    margin: auto 2rem;
+    transition-property: transform, left;
+    transition-duration: 200ms;
+    position: absolute;
+    bottom: 1.7rem;
+}
+
+#nav-bar>.more-menu>i:hover {
+    transform: rotate( 135deg );
+}
+
+#nav-bar>.links-mobile {
+    position: absolute;
+    top: 0;
+    left: -60vw;
+    height: 100vh;
+    width: 60vw;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    transition-property: left;
+    transition-duration: 600ms;
+}
+
+#nav-bar>.links-mobile span {
+    margin-left: 5px;
+    display: inline-block;
+    background-color: white;
+    color: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#nav-bar>.more-menu:hover + .links-mobile {
+    left: 0;
+}
+
+#nav-bar>.links-mobile:hover {
+    left: 0;
+}
+
+#nav-bar>.links-mobile>h4 {
+    padding: .2rem .8rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    position: relative;
+    transition: all 0.2s;
+    z-index: 1;
+}
+
+#nav-bar>.links-mobile>h4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+    transition: all 0.2s;
+}
+
+#nav-bar>.links-mobile>h4:hover::before {
+    width: 100%;
+}
+
+#nav-bar>.links-mobile>h4:hover{
+    color: black;
+}
+
+#nav-bar>.links-mobile>h4:active:before {
+    background: white;
+}
+
+/* login */
+
+.login-modal {
+    position: absolute;
+    z-index: 900;
+    top: 0;
+    left: -60vw;
+    height: 100vh;
+    width: 60vw;
+    max-width: 700px;
+    background-color: black;
+    color: white;
+    gap: 2rem;
+    transition-property: left;
+    transition-duration: 600ms;
+}
+
+.login-modal.open {
+    left: 0;
+}
+
+.login-modal>.already-logged {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.login-modal>.already-logged>.user-info {
+    text-align: center;
+}
+
+.login-modal>.already-logged>.log-out {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition-property: color;
+    transition-duration: 250ms;
+}
+
+.login-modal>.already-logged>.log-out:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.login-modal>.already-logged>.log-out>i{
+    font-size: 7rem;
+    margin-bottom: 1rem;
+}
+
+.login-modal>form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.login-modal>form>input{
+    width: 70%;
+    background-color: transparent;
+    border: 0px;
+    outline: 0;
+    color: white;
+    border-bottom: 2px solid white;
+    padding: .5rem;
+    font-size: 1rem;
+}
+
+.login-modal>form>input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.login-modal>form>h4 {
+    text-align: center;
+}
+
+.login-modal button {
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+   }
+   
+.login-modal button::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: white;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+.login-modal button:hover::before {
+    width: 105%;
+   }
+   
+.login-modal button:hover {
+    color: black;
+   }
+
+/* create account */
+
+.create-account-modal {
+    position: absolute;
+    z-index: 901;
+    top: 0;
+    left: -60vw;
+    height: 100vh;
+    width: 60vw;
+    max-width: 700px;
+    background-color: black;
+    color: white;
+    gap: 2rem;
+    transition-property: left;
+    transition-duration: 600ms;
+}
+
+.create-account-modal.open {
+    left: 0;
+}
+
+.create-account-modal>form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.create-account-modal>form>h4{
+    text-align: center;
+}
+
+.create-account-modal>form>input{
+    width: 70%;
+    background-color: transparent;
+    border: 0px;
+    outline: 0;
+    color: white;
+    border-bottom: 2px solid white;
+    padding: .5rem;
+    font-size: 1rem;
+}
+
+.create-account-modal>form>input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.create-account-modal>form button {
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+   }
+   
+.create-account-modal>form button::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: white;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+.create-account-modal>form button:hover::before {
+    width: 105%;
+   }
+   
+.create-account-modal>form button:hover {
+    color: black;
+   }
+
+/* basket */
+
+.basket-modal {
+    position: absolute;
+    z-index: 900;
+    top: 0;
+    left: -60vw;
+    height: 100vh;
+    width: 60vw;
+    max-width: 700px;
+    background-color: black;
+    color: white;
+    gap: 2rem;
+    transition-property: left;
+    transition-duration: 600ms;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.basket-modal>h4 {
+    text-align: center;
+}
+
+.basket-modal.open {
+    left: 0;
+}
+
+.basket-modal button {
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+   }
+   
+.basket-modal button::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: white;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+.basket-modal button:hover::before {
+    width: 105%;
+   }
+   
+.basket-modal button:hover {
+    color: black;
+   }
+
+.basket-modal>.basket-list {
+    max-height: 210px;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-bottom: 1px solid white;
+}
+
+.basket-modal>.basket-list::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.basket-modal>.basket-list::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+.basket-modal>.basket-list::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.basket-modal>.basket-list>li {
+    list-style: none;
+    cursor: default;
+}
+
+.basket-modal>.basket-list>li>span {
+    display: inline-block;
+    margin-top: .5rem;
+    cursor: pointer;
+    transition-property: color;
+    transition-duration: 200ms;
+}
+
+.basket-modal>.basket-list>li>span:hover {
+    color: red;
+}
+
+.basket-modal>.basket-list>li>h4 {
+    transition-property: letter-spacing;
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+
+.basket-modal>.basket-list>li>h4:hover {
+    letter-spacing: 2px;
+}
+
+/* purchase */
+
+.purchase-modal {
+    position: absolute;
+    z-index: 901;
+    top: 0;
+    left: -100vw;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    gap: 2rem;
+    transition-property: left;
+    transition-duration: 600ms;
+}
+
+.purchase-modal.open {
+    left: 0;
+}
+
+.purchase-modal>form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: .5rem;
+}
+
+.purchase-modal>form>h4{
+    text-align: center;
+}
+
+.purchase-modal>form>input{
+    width: 70%;
+    background-color: transparent;
+    border: 0px;
+    outline: 0;
+    color: white;
+    border-bottom: 2px solid white;
+    padding: .5rem;
+    font-size: 1rem;
+}
+
+.purchase-modal>form>input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.purchase-modal>form button {
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+   }
+   
+.purchase-modal>form button::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: white;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+.purchase-modal>form button:hover::before {
+    width: 105%;
+   }
+   
+.purchase-modal>form button:hover {
+    color: black;
+   }
+
+@media only screen and ( min-width: 600px ) {
+
+    #nav-bar {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    #nav-bar>.more-menu {
+        display: none;
+    }
+
+    #nav-bar>.links-mobile {
+        display: none;
+    }
+
+    #nav-bar>.logo {
+        min-width: 265px;
+        width: 20%;
+    }
+
+    #nav-bar>.logo>img {
+        width: 60px;
+    }
+
+    #nav-bar>.links-desktop {
+        display: flex;
+        justify-content: flex-end;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 0 1rem;
+        width: 100%;
+    }
+    
+    #nav-bar>.links-desktop>h4 {
+        padding: .2rem .8rem;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: white;
+        position: relative;
+        transition: all 0.2s;
+        z-index: 1;
+    }
+    
+    #nav-bar>.links-desktop>h4::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background-color: white;
+        z-index: -1;
+        transition: all 0.2s;
+    }
+    
+    #nav-bar>.links-desktop>h4:hover::before {
+        width: 100%;
+    }
+    
+    #nav-bar>.links-desktop>h4:hover{
+        color: black;
+    }
+    
+    #nav-bar>.links-desktop>h4:active:before {
+        background: white;
+    }
+}
