@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <HashRouter>
         { isLoading && <LoadingScreen/> }
-        <Nav/>  
+        <Nav/>
         <Routes>
           <Route path='/' element={ <Home/> }/>
           <Route path='/shop/:id' element={ <ProductDetail/> }/>
