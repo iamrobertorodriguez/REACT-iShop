@@ -6,12 +6,11 @@ const Footer = () => {
         <footer id='footer'>
             <div id="footer-info">
                 <p>API consumption example</p>
-                <p>Endpoint: https://ecommerce-api-react.herokuapp.com/api/v1/</p>
                 <p>Contact:</p>
+                <p>www.iammrobertorodriguez.com</p>
                 <p>iamrobertorodriguez@proton.me</p>
-                <p>iamrobertorodriguez.netlify.app</p>
-                <p>Copyright © 2022: Roberto Rodríguez, México 55070</p>
-                <p>Hecho con ❤ en Academlo.</p>
+                <p>Copyright © 2021: Roberto Rodríguez, México 55070</p>
+                <p>Hecho con ❤</p>
             </div>
         </footer>
     );
